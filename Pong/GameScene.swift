@@ -16,7 +16,7 @@ public class GameScene: SKScene {
     var player = SKSpriteNode()
     var playerScore = SKLabelNode()
     var player2Score = SKLabelNode()
-    
+    var rotateAction = SKAction.rotate(byAngle: 10, duration: 1)
     var score : [String: Int] = [
         "player1": 0,
         "player2": 0
@@ -44,23 +44,25 @@ public class GameScene: SKScene {
         playerScore = self.childNode(withName: "playerScore") as! SKLabelNode
         player2Score = self.childNode(withName: "player2Score") as! SKLabelNode
         
+        ball.run(SKAction.repeatForever(rotateAction))
+        
         
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
+        /*for touch in touches {
             let location = touch.location(in: self)
             
-            /*player.run(SKAction.moveTo(x: location.x, duration: 0))*/
-        }
+            player.run(SKAction.moveTo(x: location.x, duration: 0))
+        }*/
     }
     
     override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
+        /*for touch in touches {
             let location = touch.location(in: self)
             
-           /* player.run(SKAction.moveTo(x: location.x, duration: 0))*/
-        }
+           player.run(SKAction.moveTo(x: location.x, duration: 0))
+        }*/
     }
     
 
