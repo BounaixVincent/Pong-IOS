@@ -23,5 +23,22 @@ class SoloGameScene: GameScene {
             ball.physicsBody?.applyImpulse(CGVector(dx: -20, dy: -20))
         }
     }
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            player.run(SKAction.moveTo(x: location.x, duration: 0))
+        }
+    }
+    
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            player.run(SKAction.moveTo(x: location.x, duration: 0))
+        }
+    }
 }
 
