@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+public class GameScene: SKScene {
     
     var ball = SKSpriteNode()
     var player2 = SKSpriteNode()
@@ -28,7 +28,7 @@ class GameScene: SKScene {
     }
     
     
-    override func didMove(to view: SKView) {
+    override public func didMove(to view: SKView) {
     
         
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -47,7 +47,7 @@ class GameScene: SKScene {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             
@@ -55,7 +55,7 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             
@@ -63,20 +63,5 @@ class GameScene: SKScene {
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        player2.run(SKAction.moveTo(x: ball.position.x, duration: 0.5))
-        
-        
-        if ball.position.y >= self.frame.size.height/2 - ball.size.height{
-            score["player"] = (score["player"] ?? 0) + 1
-            playerScore.text = String(describing: score["player"] ?? 0)
-            resetBall()
 
-        }
-        if ball.position.y <= self.frame.size.height/2 * -1 + ball.size.height {
-            score["player2"] = (score["player2"] ?? 0) + 1
-            player2Score.text = String(describing: score["player2"] ?? 0)
-            resetBall()
-        }
-    }
 }
