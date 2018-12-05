@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E13A03421B6D3AE00F48F60 /* SoloGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E13A03321B6D3AE00F48F60 /* SoloGameScene.sks */; };
 		3E13A03621B6D3DE00F48F60 /* DuoGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E13A03521B6D3DE00F48F60 /* DuoGameScene.sks */; };
-		3E2FBD9621B6CAFF00C53CE5 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FBD9521B6CAFF00C53CE5 /* MenuTableViewController.swift */; };
+		3E8ADCB821B7E79700AD7F8C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ADCB721B7E79700AD7F8C /* MenuViewController.swift */; };
+		3E8ADCBA21B826F200AD7F8C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ADCB921B826F200AD7F8C /* TableViewController.swift */; };
 		3ECF90D521B5724D00F28810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF90D421B5724D00F28810 /* AppDelegate.swift */; };
 		3ECF90D921B5724D00F28810 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3ECF90D821B5724D00F28810 /* Actions.sks */; };
 		3ECF90DB21B5724D00F28810 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF90DA21B5724D00F28810 /* GameScene.swift */; };
@@ -43,7 +44,8 @@
 /* Begin PBXFileReference section */
 		3E13A03321B6D3AE00F48F60 /* SoloGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SoloGameScene.sks; sourceTree = "<group>"; };
 		3E13A03521B6D3DE00F48F60 /* DuoGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuoGameScene.sks; sourceTree = "<group>"; };
-		3E2FBD9521B6CAFF00C53CE5 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		3E8ADCB721B7E79700AD7F8C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3E8ADCB921B826F200AD7F8C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		3ECF90D121B5724D00F28810 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECF90D421B5724D00F28810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ECF90D821B5724D00F28810 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -114,8 +116,10 @@
 				3ECF90D421B5724D00F28810 /* AppDelegate.swift */,
 				3ECF90D821B5724D00F28810 /* Actions.sks */,
 				3ECF90DA21B5724D00F28810 /* GameScene.swift */,
+				3E8ADCB721B7E79700AD7F8C /* MenuViewController.swift */,
 				3ECF90DC21B5724D00F28810 /* GameViewController.swift */,
 				3ECF90DE21B5724D00F28810 /* Main.storyboard */,
+				3E8ADCB921B826F200AD7F8C /* TableViewController.swift */,
 				3ECF90E121B5724D00F28810 /* Assets.xcassets */,
 				3ECF90E321B5724D00F28810 /* LaunchScreen.storyboard */,
 				3ECF90E621B5724D00F28810 /* Info.plist */,
@@ -123,7 +127,6 @@
 				3E13A03321B6D3AE00F48F60 /* SoloGameScene.sks */,
 				3EE72EB221B6AEFD0003F0F4 /* DuoGameScene.swift */,
 				3E13A03521B6D3DE00F48F60 /* DuoGameScene.sks */,
-				3E2FBD9521B6CAFF00C53CE5 /* MenuTableViewController.swift */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -281,8 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ECF90DB21B5724D00F28810 /* GameScene.swift in Sources */,
+				3E8ADCBA21B826F200AD7F8C /* TableViewController.swift in Sources */,
+				3E8ADCB821B7E79700AD7F8C /* MenuViewController.swift in Sources */,
 				3ECF90DD21B5724D00F28810 /* GameViewController.swift in Sources */,
-				3E2FBD9621B6CAFF00C53CE5 /* MenuTableViewController.swift in Sources */,
 				3ECF90D521B5724D00F28810 /* AppDelegate.swift in Sources */,
 				3EE72EB321B6AEFD0003F0F4 /* DuoGameScene.swift in Sources */,
 				3EE72EB121B6AEE50003F0F4 /* SoloGameScene.swift in Sources */,

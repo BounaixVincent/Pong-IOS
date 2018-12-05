@@ -11,16 +11,17 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    @IBOutlet weak var skView: SKView!
+    var spriteName : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
+        if let view = skView {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "SoloGameScene") {
+            if let scene = SKScene(fileNamed: spriteName) {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
                 // Present the scene
                 view.presentScene(scene)
             }
