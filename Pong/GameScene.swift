@@ -18,7 +18,7 @@ public class GameScene: SKScene {
     var player2Score = SKLabelNode()
     var rotateAction = SKAction.rotate(byAngle: 10, duration: 1)
     var score : [String: Int] = [
-        "player1": 0,
+        "player": 0,
         "player2": 0
     ]
     
@@ -87,8 +87,15 @@ public class GameScene: SKScene {
         
         resetBall()
         ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
+        let currentScore:[String: Int] = UserDefaults.standard.dictionary(forKey: "score") as! [String : Int]
+        var globalScore = UserDefaults.standard.integer(forKey: "globalScore")
+        if globalScore <= currentScore["player"] ?? 0 {
+            UserDefaults.standard.set(currentScore["player"], forKey: "score")
+            globalScore = currentScore["player"] ?? 0
+            print(globalScore)
+        }
         UserDefaults.standard.set(score, forKey: "score")
-        let bestScore = UserDefaults.standard.dictionary(forKey: "score")
+
     }
     
     
