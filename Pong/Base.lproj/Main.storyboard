@@ -29,10 +29,6 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ball2" translatesAutoresizingMaskIntoConstraints="NO" id="G11-Cc-Db2">
-                                        <rect key="frame" x="53" y="396" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMf-6E-8d3">
                                         <rect key="frame" x="33" y="438" width="75" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,6 +57,16 @@
                                         </state>
                                         <connections>
                                             <segue destination="tK8-Iv-ct6" kind="show" id="IYf-MG-7KY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-h2-vV7">
+                                        <rect key="frame" x="138" y="94" width="99" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" title="Choose Image">
+                                            <color key="titleColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseImage:" destination="BV1-FR-VrT" eventType="touchUpInside" id="8lF-jp-cPH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -102,7 +108,6 @@
         <!--Table View Controller-->
         <scene sceneID="Tec-YL-hef">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kqu-cb-gF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="tK8-Iv-ct6" customClass="TableViewController" customModule="Pong" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LAq-NL-Bo2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -126,13 +131,11 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqu-cb-gF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58.399999999999999" y="1024.1379310344828"/>
+            <point key="canvasLocation" x="54" y="824"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ball2" width="1028" height="1028"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g2s-RX-Ovo"/>
     </inferredMetricsTieBreakers>

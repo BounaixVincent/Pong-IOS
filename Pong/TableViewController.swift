@@ -12,13 +12,7 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let currentScores = UserDefaults.standard.dictionary(forKey: "score")
-        
-        for i in 0...100 {
-            data.append("\(i)")
-        }
-        
+
         tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,6 +20,14 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("it apperead")
+        data.append(String(UserDefaults.standard.integer(forKey: "globalScore")))
+        
+    }
+    
     private var data: [String] = []
 
     // MARK: - Table view data source
@@ -43,7 +45,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")! //1.
-        
+
         let text = data[indexPath.row] //2.
         
         cell.textLabel?.text = text //3.

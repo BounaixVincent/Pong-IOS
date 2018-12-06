@@ -71,6 +71,15 @@ public class GameScene: SKScene {
         
         if ball.position.y >= self.frame.size.height/2 - ball.size.height{
             onWon(player: "player")
+            let currentScore:[String: Int] = UserDefaults.standard.dictionary(forKey: "score") as! [String : Int]
+            var globalScore = UserDefaults.standard.integer(forKey: "globalScore")
+            if globalScore <= currentScore["player"] ?? 0 {
+                print("new global score")
+                UserDefaults.standard.set(currentScore["player"], forKey: "score")
+                globalScore = currentScore["player"] ?? 0
+                print(globalScore)
+            }
+            UserDefaults.standard.set(score, forKey: "score")
             playerScore.text = String(describing: score["player"] ?? 0)
             
         }
@@ -87,15 +96,6 @@ public class GameScene: SKScene {
         
         resetBall()
         ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
-        let currentScore:[String: Int] = UserDefaults.standard.dictionary(forKey: "score") as! [String : Int]
-        var globalScore = UserDefaults.standard.integer(forKey: "globalScore")
-        if globalScore <= currentScore["player"] ?? 0 {
-            UserDefaults.standard.set(currentScore["player"], forKey: "score")
-            globalScore = currentScore["player"] ?? 0
-            print(globalScore)
-        }
-        UserDefaults.standard.set(score, forKey: "score")
-
     }
     
     
