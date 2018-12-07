@@ -22,6 +22,7 @@ public class GameScene: SKScene {
         "player2": 0
     ]
     
+    
     func resetBall() {
         ball.position.x = 0
         ball.position.y = 0
@@ -71,15 +72,15 @@ public class GameScene: SKScene {
         
         if ball.position.y >= self.frame.size.height/2 - ball.size.height{
             onWon(player: "player")
-            let currentScore:[String: Int] = UserDefaults.standard.dictionary(forKey: "score") as! [String : Int]
+            //let currentScore: [String: Int]? = UserDefaults.standard.dictionary(forKey: "score") as? [String: Int]
             var globalScore = UserDefaults.standard.integer(forKey: "globalScore")
-            if globalScore <= currentScore["player"] ?? 0 {
-                print("new global score")
-                UserDefaults.standard.set(currentScore["player"], forKey: "score")
-                globalScore = currentScore["player"] ?? 0
+            if globalScore < (score["player"] ?? 0) {
+                UserDefaults.standard.set(score, forKey: "score")
+                globalScore = score["player"] ?? 0
                 print(globalScore)
+                UserDefaults.standard.set(globalScore, forKey: "globalScore")
             }
-            UserDefaults.standard.set(score, forKey: "score")
+            
             playerScore.text = String(describing: score["player"] ?? 0)
             
         }

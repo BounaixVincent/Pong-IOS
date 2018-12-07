@@ -23,7 +23,6 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("it apperead")
         data.append(String(UserDefaults.standard.integer(forKey: "globalScore")))
         
     }
